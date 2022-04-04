@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/lets"></ImageView>
+
+            <TextView
+                android:id="@+id/tet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="@string/estiema"
+                android:textColor="@color/magenta"
+                android:textFontWeight="700"
+                android:textSize="20sp"
+                android:textStyle="normal"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/makeupRecyclerImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tet"
+                android:layoutDirection="ltr"
+                android:overScrollMode="never"></androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/makeupRecyclerImages"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/oswald"
+                android:text="Estie Lets Make Up"
+                android:textColor="@color/colorDarkGrey"
+                android:textFontWeight="700"
+                android:textSize="14sp"
+                android:textStyle="normal"></TextView>
+
+            <TextView
+                android:id="@+id/how"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="How It Works"
+                android:textColor="@color/magenta"
+                android:textFontWeight="700"
+                android:textSize="20sp"
+                android:textStyle="normal"></TextView>
+
+            <TextView
+                android:id="@+id/contentHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/how"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="Watch Our Video Above To See What All The Buzz Is About"
+                android:textColor="@color/magenta"
+                android:textFontWeight="700"
+                android:textSize="20sp"
+                android:textStyle="normal"></TextView>
+
+            <FrameLayout
+                android:id="@+id/playvideo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/contentHeading"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/thumb1">
+
+                <VideoView
+                    android:id="@+id/video_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0000" />
+
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    android:src="@drawable/videothumb" />
+
+                <ImageButton
+                    android:id="@+id/play_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_baseline_play_circle_outline_24" />
+
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/contentHeading1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/playvideo"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="TransFormation Gallery"
+                android:textColor="@color/magenta"
+                android:textFontWeight="700"
+                android:textSize="20sp"
+                android:textStyle="normal"></TextView>
+
+            <TextView
+                android:id="@+id/contentHeading2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contentHeading1"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="FEATURED BEFORE AND AFTERS .."
+                android:textColor="@color/magenta"
+                android:textFontWeight="700"
+                android:textSize="20sp"
+                android:textStyle="normal"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imageRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contentHeading2"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layoutDirection="ltr"
+                android:overScrollMode="never"></androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

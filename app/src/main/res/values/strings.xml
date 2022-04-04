@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">EstiesApp</string>
+    //Languages
+  <!--  <string name="en">English</string>
+    <string name="en">Spanish</string>
+    <string name="en">Italian</string>
+    <string name="en">Japnese</string>
+    <string name="en">French</string>
+    <string name="en">Filipino</string>
+    <string name="en">Mandarin</string>
+    <string name="en">Swedish</string>
+    <string name="en">Dutch</string>
+    <string name="en">Farsi</string>-->
+    <string name="estie">Estie\’s Way</string>
+    <string name="estiema">Estie\’s  Lets Make Up</string>
+    <string name="book"><u>Book an Appointment</u>.</string>
+    <string name="bespoke"><u>Bespoke Make-up editor</u>.</string>
+
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/cheekwrinkles.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/container_descp_item.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/doublechin.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/editor_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/eyebottomsheet.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/eyebrow_bottomsheet.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/eyeswrinkles.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/finalmakeup.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/foreheadwrinkles.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/lipsbottomsheet.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/lipscornerwrinkles.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/lipsnosewrinkles.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/lipstopwrinkles.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Prakhar/Downloads/EstiesAndroidApp (1)/EstiesAndroidApp-2/app/src/main/res/layout/nosebottomsheet.xml" value="0.17552083333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/editor"
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:gravity="center|center_horizontal">
+
+                <ImageView
+                    android:id="@+id/defaultFace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editor"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:id="@+id/before_makeup_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/magenta"
+                    android:gravity="bottom"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:visibility="visible">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/makeup_selection_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="ltr"
+                        android:overScrollMode="never">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                    <LinearLayout
+                        android:id="@+id/cancel_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/makeup_selection_recycler"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/cancel_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_baseline_cancel_24" />
+
+                        <TextView
+                            android:id="@+id/estieApp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="100dp"
+                            android:gravity="center_horizontal"
+                            android:text="Esties app"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/finalMakeUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="80dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="View Make Up"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <ScrollView
+                    android:id="@+id/after_view_makeup_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/Noselayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/Nose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Nose"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/NoseDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Nose"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/Eyelayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Noselayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/Eye"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Eyes"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/Eyedesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Eye"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/Eyebrowlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Eyelayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/Eyebrow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Eyebrows"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/EyebrowDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Eye"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/Liplayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Eyebrowlayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/Lip"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Lip"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/LipDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Lip"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/facelayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/Face"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Face"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/facedesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Face"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="52dp"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/lefteyebrow"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="140dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/righteyeBrow"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/lefteye"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/righteye"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/nose"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/lips"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone"
+
+                />
+
+            <ImageView
+                android:id="@+id/iv_left_cheek_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_right_cheek_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_double_chin_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_left_eye_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_left_eye_brow_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_right_eye_brow_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_right_eye_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_fore_head_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_lips_left_corner_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_lips_right_corner_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_lips_nose_corner_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_lips_top_corner_wrinkles"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/bs_eyebrow"
+            layout="@layout/eyebrow_bottomsheet" />
+
+        <include
+            android:id="@+id/bs_eye"
+            layout="@layout/eyebottomsheet" />
+
+        <include
+            android:id="@+id/bs_lips_bottom"
+            layout="@layout/lipsbottomsheet" />
+
+        <include
+            android:id="@+id/bs_nose_bottom"
+            layout="@layout/nosebottomsheet" />
+
+        <include
+            android:id="@+id/bs_cheek_wrinkles"
+            layout="@layout/cheekwrinkles" />
+
+        <include
+            android:id="@+id/bs_double_chin"
+            layout="@layout/doublechin" />
+
+        <include
+            android:id="@+id/bs_fore_head_wrinkles"
+            layout="@layout/foreheadwrinkles" />
+
+        <include
+            android:id="@+id/bs_lips_top_wrinkle"
+            layout="@layout/lipstopwrinkles" />
+
+        <include
+            android:id="@+id/bs_eyes_wrinkles"
+            layout="@layout/eyeswrinkles" />
+
+        <include
+            android:id="@+id/bs_lips_nose_wrinkle"
+            layout="@layout/lipsnosewrinkles" />
+
+        <include
+            android:id="@+id/bs_lips_corner_wrinkles"
+            layout="@layout/lipscornerwrinkles" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

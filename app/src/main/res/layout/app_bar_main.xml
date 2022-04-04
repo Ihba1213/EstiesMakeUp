@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="10dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipChildren="false"
+                    android:clipToPadding="false" />
+
+                <LinearLayout
+                    android:id="@+id/layoutDots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"></LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/banner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/capsule_shape"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="@string/estie"
+                android:textColor="@color/white"
+                android:textSize="16sp"></TextView>
+
+            <FrameLayout
+                android:id="@+id/playhomevideo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/text"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/thumb1">
+
+                <VideoView
+                    android:id="@+id/video_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0000" />
+
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/videothumb" />
+
+                <ImageButton
+                    android:id="@+id/play_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_baseline_play_circle_outline_24" />
+
+
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/playhomevideo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/magenta"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/subheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/heading"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subheading"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"></TextView>
+
+            <TextView
+                android:id="@+id/bespoke"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/capsule_shape"
+                android:backgroundTint="@color/magenta"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="@string/bespoke"
+                android:textColor="@color/white"
+                android:textSize="17sp"></TextView>
+
+            <FrameLayout
+                android:id="@+id/playhomevideo2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/bespoke"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/thumb1">
+
+                <VideoView
+                    android:id="@+id/video_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0000" />
+
+                <ImageView
+                    android:id="@+id/thumbnail2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/thumb1" />
+
+                <ImageButton
+                    android:id="@+id/play_button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_baseline_play_circle_outline_24" />
+
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/book_appointment"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/playhomevideo2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/capsule_shape"
+                android:backgroundTint="@color/magenta"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="@string/book"
+                android:textColor="@color/white"
+                android:textSize="17sp"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bottomRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/book_appointment"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="20dp"
+                android:layoutDirection="ltr"
+                android:overScrollMode="never"></androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottomRecycler"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="Want to explore more about Esties \nInternational?"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+            <RelativeLayout
+                android:id="@+id/social"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_below="@+id/welcome"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oswald"
+                    android:layout_centerHorizontal="true"
+                    android:text="Follow us on"
+                    android:textColor="@color/magenta"
+                    android:textSize="16sp"></TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/social"
+                android:paddingBottom="100dp"
+                android:gravity="center|center_vertical|bottom"
+               >
+
+                <ImageView
+                    android:id="@+id/fb"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/fb"></ImageView>
+
+
+
+                <ImageView
+                    android:id="@+id/insta"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/fb"
+                    android:src="@drawable/insta"></ImageView>
+
+                <ImageView
+                    android:id="@+id/yelp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/insta"
+                    android:src="@drawable/yelp"></ImageView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.core.widget.NestedScrollView>
