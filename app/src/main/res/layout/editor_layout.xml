@@ -90,12 +90,19 @@
                 <ScrollView
                     android:id="@+id/after_view_makeup_container"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:visibility="gone">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
 
                         <LinearLayout
                             android:id="@+id/Noselayout"
@@ -254,6 +261,258 @@
                                 android:fontFamily="@font/oswald"
                                 android:textColor="#000"
                                 android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cheek_wrinkle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_cheek_wrinkle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Cheek Wrinkle"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_cheek_wrinkle_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lips_nose_wrinkle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_lips_nose_wrinkle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Lips Nose Wrinkle"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_lips_nose_wrinkle_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Face"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lips_corner_wrinkle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_lips_corner_wrinkle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Lips Corner Wrinkle"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_lips_corner_wrinkle_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/Face"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/eyebrow_wrinkle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_eyebrow_wrinkle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Eyebrow Wrinkle"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_eyebrow_wrinkle_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lips_top_wrinkle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_lips_top_wrinkle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Lips Top Wrinkle"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_lips_top_wrinkle_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/forehead_wrinkle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_forehead_wrinkle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="ForeHead Wrinkle"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_forehead_wrinkle_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/double_chin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_double_chin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Double Chin"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_double_chin_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/eyes_wrinkles"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/Liplayout"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_eyes_wrinkles"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:text="Eyes Wrinkles"
+                                android:textColor="#000"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_eyes_wrinkles_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="17dp"
+                                android:fontFamily="@font/oswald"
+                                android:textColor="#000"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
                         </LinearLayout>
 
                     </RelativeLayout>

@@ -7,12 +7,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.bumptech.glide.Glide;
 import com.esties.android.adapter.EyeBrowAdapter;
 import com.esties.android.adapter.EyesAdapter;
@@ -28,17 +30,16 @@ import com.esties.android.adapter.wrinkles.LipsCornerAdapter;
 import com.esties.android.adapter.wrinkles.LipsNoseWrinkleAdapter;
 import com.esties.android.adapter.wrinkles.LipsTopWrinklesAdapter;
 import com.esties.android.apiInterface.RestApiCalls;
-
 import com.esties.android.databinding.EditorLayoutBinding;
 import com.esties.android.model.CheekWrinkle;
+import com.esties.android.model.DescriptionTextModel;
 import com.esties.android.model.DoubleChinWrinkle;
 import com.esties.android.model.EyeBrowsModel;
 import com.esties.android.model.EyebrowsWrinkle;
 import com.esties.android.model.EyesModel;
 import com.esties.android.model.EyesWrinkle;
 import com.esties.android.model.FaceModel;
-import com.esties.android.model.FinalImageDataModel;
-import com.esties.android.model.FinalImageModel;
+import com.esties.android.model.FinalMakeupModel;
 import com.esties.android.model.ForheadWrinkle;
 import com.esties.android.model.HomeScreenMenuModel;
 import com.esties.android.model.LipsCornerWrinkle;
@@ -50,9 +51,11 @@ import com.esties.android.model.WrinkleModel;
 import com.esties.android.network.RetrofitInstance;
 import com.esties.android.utility.ProgressDialog;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -72,7 +75,7 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
     private BottomSheetBehavior eyebrowsheet,
             eyesheet, lipsSheet, noseSheet, btCheekWrinkles, btDoubleChin,
             btForeHeadChin, btLipsTopWrinkles, btEyesErinkles, btLipsNoseWrinkles, btLipsCornerWrinkles;
-    private int noseId,lipId,eyeid,eyebrowid,faceid,
+    private int noseId, lipId, eyeid, eyebrowid, faceid,
             doubleChinWrinkleId, chickWrinkleId;
     private String lefteyebrowWM, righteyeBrowWM, lefteyeWM, righteyeWM,
             noseWM, lipsWM, defaultFaceWM,
@@ -87,7 +90,12 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
     private final List<EyesWrinkle> eyesWrinkles = new ArrayList<>();
     private final List<LipsCornerWrinkle> lipsCornerWrinkles = new ArrayList<>();
     private final List<EyebrowsWrinkle> eyebrowWrinkles = new ArrayList<>();
+    private final List<DescriptionTextModel> descriptionTextModelList = new ArrayList<>();
     private int foreheadWrinklesId;
+    private int lipsNoseWrinklesId;
+    private int lipsCornerWrinklesId;
+    private int eyesWrinklesId;
+    private int lipsTopWrinklesId;
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -235,17 +243,21 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
     private void finalMakeUpImage() {
         binding.beforeMakeupContainer.setVisibility(View.GONE);
         binding.afterViewMakeupContainer.setVisibility(View.VISIBLE);
-        getDescriptionData(lipId,noseId, eyeid,eyebrowid,faceid,chickWrinkleId,doubleChinWrinkleId,foreheadWrinklesId);
+        getDescriptionData(lipId, noseId, eyeid, eyebrowid, faceid, chickWrinkleId, doubleChinWrinkleId, foreheadWrinklesId);
     }
 
-    public void getDescriptionData(int lipid, int noseid, int eyyid, int eyebroid, int faceid,int chinID,int cheekID,int forhead) {
+    public void getDescriptionData(int lipid, int noseid, int eyyid, int eyebroid,
+                                   int faceid, int chinID, int cheekID, int forhead) {
         ProgressDialog.showProgressBar(mContext);
         RestApiCalls service = RetrofitInstance.getRetrofitInstanceBeforeAuthToekenNotRequired().create(RestApiCalls.class);
-        Call<FinalImageModel> call = service.getFinalMakeUpImage(faceid, 1, eyyid, eyebroid,
-                noseid, lipid, chinID,cheekID,forhead,((MyApp) this.getApplication()).getLanguageType());
-        call.enqueue(new Callback<FinalImageModel>() {
+        Call<FinalMakeupModel> call = service.getFinalMakeUpImage(faceid, 1, eyyid, eyebroid,
+                noseid, lipid, chinID, cheekID, forhead, ((MyApp) this.getApplication()).getLanguageType()
+                , lipsNoseWrinklesId, doubleChinWrinkleId, 0,
+                lipsCornerWrinklesId, foreheadWrinklesId,
+                chickWrinkleId, eyesWrinklesId, lipsTopWrinklesId);
+        call.enqueue(new Callback<FinalMakeupModel>() {
             @Override
-            public void onResponse(Call<FinalImageModel> call, Response<FinalImageModel> response) {
+            public void onResponse(Call<FinalMakeupModel> call, Response<FinalMakeupModel> response) {
                 try {
                     if (response.code() == 200 && response.isSuccessful()) {
                         ProgressDialog.hideProgressBar();
@@ -263,18 +275,17 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
             }
 
             @Override
-            public void onFailure(Call<FinalImageModel> call, Throwable t) {
+            public void onFailure(Call<FinalMakeupModel> call, Throwable t) {
                 ProgressDialog.hideProgressBar();
                 Toast.makeText(mContext, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void onCall(List<FinalImageDataModel> finalImageDataModels) {
+    public void onCall(List<FinalMakeupModel.Payload> finalImageDataModels) {
         if (finalImageDataModels.get(0).getEyeBrowContentList().size() > 0) {
             String ss = finalImageDataModels.get(0).getEyeBrowContentList().get(0).getDescription();
             binding.EyebrowDesc.setText(HtmlCompat.fromHtml(ss, 0));
-
         } else {
             binding.Eyebrowlayout.setVisibility(View.GONE);
         }
@@ -288,6 +299,9 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
         if (finalImageDataModels.get(0).getEyesContentList().size() > 0) {
             String ss = finalImageDataModels.get(0).getEyesContentList().get(0).getDescription();
             binding.Eyedesc.setText(HtmlCompat.fromHtml(ss, 0));
+            DescriptionTextModel descriptionTextModel = new DescriptionTextModel(
+                    "Eyes", finalImageDataModels.get(0).getEyesContentList().get(0).getDescription());
+            descriptionTextModelList.add(descriptionTextModel);
 
         } else {
             binding.Eyelayout.setVisibility(View.GONE);
@@ -302,10 +316,71 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
         if (finalImageDataModels.get(0).getLipsContentList().size() > 0) {
             String ss = finalImageDataModels.get(0).getLipsContentList().get(0).getDescription();
             binding.LipDesc.setText(HtmlCompat.fromHtml(ss, 0));
-
         } else {
             binding.Liplayout.setVisibility(View.GONE);
         }
+        // wrinklesData
+
+        if (finalImageDataModels.get(0).getCheekWrinkles().size() > 0) {
+            String ss = finalImageDataModels.get(0).getCheekWrinkles().get(0).getDescription();
+            binding.tvCheekWrinkleDesc.setText(HtmlCompat.fromHtml(ss, 0));
+        } else {
+            binding.cheekWrinkle.setVisibility(View.GONE);
+        }
+
+        if (finalImageDataModels.get(0).getLipsNoseWrinkles().size() > 0) {
+            String ss = finalImageDataModels.get(0).getLipsContentList().get(0).getDescription();
+            binding.tvLipsNoseWrinkleDesc.setText(HtmlCompat.fromHtml(ss, 0));
+
+        } else {
+            binding.lipsNoseWrinkle.setVisibility(View.GONE);
+        }
+
+        if (finalImageDataModels.get(0).getLipsCornerWrinkles().size() > 0) {
+            String ss = finalImageDataModels.get(0).getLipsCornerWrinkles().get(0).getDescription();
+            binding.tvLipsCornerWrinkleDesc.setText(HtmlCompat.fromHtml(ss, 0));
+        } else {
+            binding.lipsCornerWrinkle.setVisibility(View.GONE);
+        }
+
+        if (finalImageDataModels.get(0).getEyebrowWrinkles().size() > 0) {
+            String ss = finalImageDataModels.get(0).getEyebrowWrinkles().get(0).getDescription();
+            binding.tvEyebrowWrinkleDesc.setText(HtmlCompat.fromHtml(ss, 0));
+        } else {
+            binding.eyebrowWrinkle.setVisibility(View.GONE);
+        }
+
+        if (finalImageDataModels.get(0).getLipsTopWrinkles().size() > 0) {
+            String ss = finalImageDataModels.get(0).getLipsTopWrinkles().get(0).getDescription();
+            binding.tvLipsTopWrinkleDesc.setText(HtmlCompat.fromHtml(ss, 0));
+        } else {
+            binding.lipsTopWrinkle.setVisibility(View.GONE);
+        }
+
+        if (finalImageDataModels.get(0).getForeheadWrinkles().size() > 0) {
+            String ss = finalImageDataModels.get(0).getForeheadWrinkles().get(0).getDescription();
+            binding.tvForeheadWrinkleDesc.setText(HtmlCompat.fromHtml(ss, 0));
+
+
+        } else {
+            binding.foreheadWrinkle.setVisibility(View.GONE);
+        }
+
+        if (finalImageDataModels.get(0).getDubleChin().size() > 0) {
+            String ss = finalImageDataModels.get(0).getDubleChin().get(0).getDescription();
+            binding.tvDoubleChinDesc.setText(HtmlCompat.fromHtml(ss, 0));
+        } else {
+            binding.doubleChin.setVisibility(View.GONE);
+        }
+
+        if (finalImageDataModels.get(0).getEyesContentList().size() > 0) {
+            String ss = finalImageDataModels.get(0).getEyeBrowContentList().get(0).getDescription();
+            binding.tvEyesWrinklesDesc.setText(HtmlCompat.fromHtml(ss, 0));
+
+        } else {
+            binding.eyesWrinkles.setVisibility(View.GONE);
+        }
+
 
     }
 
@@ -566,6 +641,7 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
         eyesWrinkles.addAll(body.getEyes_wrinkles());
         lipsCornerWrinkles.addAll(body.getLips_corner_wrinkles());
         eyebrowWrinkles.addAll(body.getEyebrow_wrinkles());
+
     }
 
     private void clearWrinkles() {
@@ -756,6 +832,7 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
 
     @Override
     public void onLipsCornerSelected(LipsCornerWrinkle item) {
+        lipsCornerWrinklesId = item.getId();
         binding.ivLipsLeftCornerWrinkles.setVisibility(View.VISIBLE);
         Glide.with(mContext)
                 .load("https://rldevelopment.in/makeup/public/uploads/wrinkle/" + item.getBefore_img())
@@ -766,6 +843,7 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
 
     @Override
     public void onLipsNoseWrinkle(LipsNoseWrinkle item) {
+        lipsNoseWrinklesId = item.getId();
         binding.ivLipsNoseCornerWrinkles.setVisibility(View.VISIBLE);
         Glide.with(mContext)
                 .load("https://rldevelopment.in/makeup/public/uploads/wrinkle/" + item.getBefore_img())
@@ -776,6 +854,7 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
 
     @Override
     public void onLipsTopWrinkles(LipsTopWrinkle item) {
+        lipsTopWrinklesId = item.getId();
         binding.ivLipsTopCornerWrinkles.setVisibility(View.VISIBLE);
         Glide.with(mContext)
                 .load("https://rldevelopment.in/makeup/public/uploads/wrinkle/" + item.getBefore_img())
@@ -797,6 +876,7 @@ public class EditorActivity extends AppCompatActivity implements HomeScreenItemA
 
     @Override
     public void onEyesRinkleSelected(EyesWrinkle item) {
+        eyesWrinklesId = item.getId();
         binding.ivLeftEyeWrinkles.setVisibility(View.VISIBLE);
         binding.ivRightEyeWrinkles.setVisibility(View.VISIBLE);
         Glide.with(mContext)

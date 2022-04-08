@@ -180,41 +180,41 @@ public class FinalMakeUpActivity extends AppCompatActivity {
         } else {
             noseWrinkle.setVisibility(View.GONE);
         }
-        finalMakeUpImage(getIntent().getIntExtra("lipId", 0), getIntent().getIntExtra("noseId", 0), getIntent().getIntExtra("lefteyeid", 0),
-                getIntent().getIntExtra("lefteyebrowid", 0), getIntent().getIntExtra("faceid", 0),getIntent().getIntExtra("cheek", 0),getIntent().getIntExtra("chin", 0),getIntent().getIntExtra("forhead", 0));
+//        finalMakeUpImage(getIntent().getIntExtra("lipId", 0), getIntent().getIntExtra("noseId", 0), getIntent().getIntExtra("lefteyeid", 0),
+//                getIntent().getIntExtra("lefteyebrowid", 0), getIntent().getIntExtra("faceid", 0),getIntent().getIntExtra("cheek", 0),getIntent().getIntExtra("chin", 0),getIntent().getIntExtra("forhead", 0));
 
     }
 
-    public void finalMakeUpImage(int lipid, int noseid, int eyyid, int eyebroid, int faceid,int chinID,int cheekID,int forhead) {
-        ProgressDialog.showProgressBar(mContext);
-        RestApiCalls service = RetrofitInstance.getRetrofitInstanceBeforeAuthToekenNotRequired().create(RestApiCalls.class);
-        Call<FinalImageModel> call = service.getFinalMakeUpImage(faceid, 1, eyyid, eyebroid,
-                noseid, lipid, chinID,cheekID,forhead,((MyApp) this.getApplication()).getLanguageType());
-        call.enqueue(new Callback<FinalImageModel>() {
-            @Override
-            public void onResponse(Call<FinalImageModel> call, Response<FinalImageModel> response) {
-                try {
-                    if (response.code() == 200 && response.isSuccessful()) {
-                        ProgressDialog.hideProgressBar();
-                        onCall(response.body().getPayload());
-
-
-                    } else if (response.code() == 400) {
-                        ProgressDialog.hideProgressBar();
-                        Toast.makeText(mContext, "Something Went Wrong", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (NullPointerException exception) {
-                    exception.getMessage();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<FinalImageModel> call, Throwable t) {
-                ProgressDialog.hideProgressBar();
-                Toast.makeText(mContext, "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    public void finalMakeUpImage(int lipid, int noseid, int eyyid, int eyebroid, int faceid,int chinID,int cheekID,int forhead) {
+//        ProgressDialog.showProgressBar(mContext);
+//        RestApiCalls service = RetrofitInstance.getRetrofitInstanceBeforeAuthToekenNotRequired().create(RestApiCalls.class);
+//        Call<FinalImageModel> call = service.getFinalMakeUpImage(faceid, 1, eyyid, eyebroid,
+//                noseid, lipid, chinID,cheekID,forhead,((MyApp) this.getApplication()).getLanguageType());
+//        call.enqueue(new Callback<FinalImageModel>() {
+//            @Override
+//            public void onResponse(Call<FinalImageModel> call, Response<FinalImageModel> response) {
+//                try {
+//                    if (response.code() == 200 && response.isSuccessful()) {
+//                        ProgressDialog.hideProgressBar();
+//                        onCall(response.body().getPayload());
+//
+//
+//                    } else if (response.code() == 400) {
+//                        ProgressDialog.hideProgressBar();
+//                        Toast.makeText(mContext, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+//                    }
+//                } catch (NullPointerException exception) {
+//                    exception.getMessage();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<FinalImageModel> call, Throwable t) {
+//                ProgressDialog.hideProgressBar();
+//                Toast.makeText(mContext, "Failed", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
     public void onCall(List<FinalImageDataModel> finalImageDataModels) {
         if (finalImageDataModels.get(0).getEyeBrowContentList().size() > 0) {

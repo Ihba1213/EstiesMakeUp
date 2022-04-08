@@ -7,7 +7,6 @@ public class FinalImageDataModel implements Serializable {
     private List<FaceContentList> faceContentList;
     private List<EyesContentList> eyesContentList;
     private List<EyeBrowContentList> eyeBrowContentList;
-
     public List<FaceContentList> getFaceContentList() {
         return faceContentList;
     }
