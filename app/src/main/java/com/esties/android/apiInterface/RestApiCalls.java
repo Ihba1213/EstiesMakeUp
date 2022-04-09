@@ -52,6 +52,8 @@ public interface RestApiCalls {
                                                @Query("eye_brows_id") int eye_brows_id, @Query("nose_id") int nose_id,
                                                @Query("lip_id") int lip_id, @Query("chin") int chin, @Query("cheek") int cheek,
                                                @Query("forhead") int forhead,
+
+
                                                @Query("language") String language,
                                                @Query("lips_nose_wrinkles_id") int lips_nose_wrinkles_id,
                                                @Query("double_chin_id") int double_chin_id,
